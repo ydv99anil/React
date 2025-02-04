@@ -10,15 +10,25 @@ function App() {
 
   const increaseValue = () =>{
     // counter = counter + 1;
-    setCounter(counter+1);
+    if(counter < 30){
+      setCounter(prevCounter => prevCounter+1);
+      setCounter(prevCounter => prevCounter+1);
+      setCounter(prevCounter => prevCounter+1);
+      setCounter(prevCounter => prevCounter+1);
+    }
     console.log("Clicked ", counter);
     console.log("Value Updated to: ", Math.random());
   }
 
+  
+
   const decreaseValue = () =>{
     // counter = counter - 1;
-    setCounter(counter-1);
-    console.log("Clicked ", counter);    console.log("Value Updated to: ", Math.random());
+    if(counter > 0){
+      setCounter(counter-1);
+    }
+    console.log("Clicked ", counter);    
+    console.log("Value Updated to: ", Math.random());
   }
 
 
