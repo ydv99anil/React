@@ -7,15 +7,7 @@ function App() {
   const [numAllowed, setNumAllowed] = useState(false);
   const [charAllowed, setCharAllowed] = useState(false);
   const [password, setPassword] = useState("");
-
-  const passRef = useRef(null);
-  const CopyPasswordToClipboard = useCallback(() => {
-    window.navigator.clipboard.writeText(password);
-    passRef.current?.select();
-    passRef.current?.setSelectionRange(0, 35)
-  }, 
-  [password])
-
+  
   const passwordGenerator = useCallback(
     () => {
       let pass = ""
@@ -33,6 +25,14 @@ function App() {
     [length, numAllowed, charAllowed, setPassword,]
   );
 
+  const passRef = useRef(null);
+  const CopyPasswordToClipboard = useCallback(() => {
+    window.navigator.clipboard.writeText(password);
+    passRef.current?.select();
+    passRef.current?.setSelectionRange(0, 35)
+  }, 
+  [password])
+
   useEffect(()=>{
     passwordGenerator()},
     [length, numAllowed, charAllowed, setPassword, passwordGenerator]
@@ -41,7 +41,7 @@ function App() {
   
   return (
     <>
-      <div className='w-full max-w-md mx-auto mt-4 absolute top-4 left-1/2 transform -translate-x-1/2 shadow-md rounded-lg px-5 py-2  text-orange-500 bg-gray-700'> 
+      <div className='w-full max-w-md mx-auto mt-4 absolute top-4 left-1/2 transform -translate-x-1/2 shadow-md rounded-lg px-5 py-2  text-orange-500 bg-gray-800'> 
         <h1 className='text-white text-center my-2 text-xl'>Password Generator</h1>
         <div className='flex  overflow-hidden mb-4  rounded'>
           <input 
