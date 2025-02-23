@@ -25,6 +25,13 @@ function App() {
     setConvertedAmount(amount * currencyInfo[to])
   }
 
+//   const reset = () => {
+//     setFrom("usd")
+//     setTo("inr")
+//     setConvertedAmount("")
+//     setAmount("0")
+//   }
+
   return (
     <div
         className="w-full h-screen flex flex-wrap justify-center bg-cover bg-no-repeat"
@@ -73,6 +80,9 @@ function App() {
                     <button type="submit" className="w-full bg-blue-600 text-white px-4 py-3 rounded-lg">
                         Convert {from.toUpperCase()} to {to.toUpperCase()}
                     </button>
+                    {/* <button type="reset" className="w-full bg-blue-600 text-white px-4 py-3 rounded-lg" onClick={reset}>
+                        Reset
+                    </button> */}
                 </form>
             </div>
         </div>
