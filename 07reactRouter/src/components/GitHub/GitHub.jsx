@@ -23,14 +23,13 @@ function GitHub() {
     //       });      
     // }, [])
 
-
   return (
     <div className='flex flex-row justify-between my-0.5  bg-gray-600 text-white  p-4 w-2/5 m-auto'>
       <div className='flex justify-center mt-3 w-80 h-70 rounded object-cover'>
         <img className='rounded-2xl' src={data.avatar_url} alt="Git Picture"/>
       </div>
       <div className='flex justify-center flex-col gap-5 text-center text-2xl m-auto'>
-        <p>GitHub Followers: {data.followers}</p>
+        <p>GitHub Followers: o{data.follwers}</p>
         <p>GitHub Repos: {data.public_repos}</p>
       </div>
     </div>
